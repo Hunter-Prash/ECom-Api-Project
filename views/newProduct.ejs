@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Product</title>
+</head>
+<body>
+    <h1>Create a New Product</h1>
+    <form action="/api/products" method="POST">
+        <label for="name">Product Name:</label>
+        <input type="text" name="name" id="name" required>
+        
+        <label for="price">Product Price:</label>
+        <input type="number" name="price" id="price" required>
+
+        <button type="submit">Create Product</button>
+    </form>
+    <a href="/api/products">Back to Products List</a>
+</body>
+</html>

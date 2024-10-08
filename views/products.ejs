@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Product List</h1>
+    <ul>
+        <% if (products.length > 0) { %>
+            <% products.forEach(function(product) { %>
+                <li>
+                    <strong><%= product.name %></strong> - $<%= product.price %> | Stock: <%= product.stock %>
+
+                    <form action="/api/cart" method="post" style="display: inline;">
+                        <input type="hidden" name="productId" value="<%= product._id %>">
+                        <button type="submit">Add to cart</button>
+                    </form>
+                </li>
+
+            <% }); %>
+        <% } else { %>
+            <p>No products available</p>
+        <% } %>
+    </ul>
+
+    <span >
+        <a href="/api/products/new" style="margin: 10px;">Add New Product</a>
+        <a href="/api/cart" style="margin: 10px;">Go to cart</a>
+        <a href="/">Go to home page</a>
+    </span>
+    
+</body>
+</html>
